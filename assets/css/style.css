@@ -32,6 +32,16 @@ input, select, textarea {
   color: #000;
 }
 
+.title {
+  text-align: center;
+  text-transform: none;
+  font-weight: bold;
+  font-family: "FunnelSans-Bold";
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom: 70px;
+}
+
 .header {
   padding: 40px 0 0 0;
 }
@@ -49,7 +59,7 @@ input, select, textarea {
 .menu__item {
   position: relative;
   display: inline-block;
-  min-width: 120px;
+  min-width: 100px;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
@@ -82,34 +92,83 @@ input, select, textarea {
   line-height: 1;
 }
 
-.card {
+.pet .card {
   border: none;
 }
-.card__pet {
+.pet .card__pet {
   width: 300px;
   box-sizing: border-box;
   overflow: hidden;
 }
-.card__pet--green {
+.pet .card__pet--green {
+  margin: 0 auto;
+  margin-left: 0;
   border-radius: 0 50% 50% 0;
   background: #02C37F;
 }
-.card__pet--yellow {
+.pet .card__pet--yellow {
+  margin: 0 auto;
   border-radius: 50%;
   background: #E8BA4F;
 }
-.card__pet--orange {
+.pet .card__pet--orange {
+  margin: 0 auto;
+  margin-right: 0;
   border-radius: 50% 50% 0 0;
   background: #E06B2C;
 }
-.card__pet__image {
+.pet .card__pet__image {
   position: relative;
   bottom: -60px;
 }
-.card__pet__image--contain {
+.pet .card__pet__image--contain {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.service {
+  padding: 60px 0;
+}
+.service .card {
+  border: none;
+}
+.service .card__service {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  transition: 0.3s;
+  box-sizing: border-box;
+  border-radius: 30%;
+  background: #E6EFFF;
+}
+.service .card__service:hover {
+  background: #FFD101;
+}
+.service .card__service:hover:after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -40px;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/emphasis.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.service .card__service__image--contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.service .card__service__text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  padding-top: 10px;
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */

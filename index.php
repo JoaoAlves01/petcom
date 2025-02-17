@@ -59,7 +59,6 @@
             </div>
         </div>
     </section>
-
     <section class="about">
         <div class="about__container container">
             <div class="about__row row">
@@ -79,26 +78,53 @@
             </div>
         </div>
     </section>
-
     <section class="service">
         <div class="service__container container">
             <div class="service__row row">
                 <div class="service__col col-md-12">
-                    <h2>We are best in:</h2>
-                    <p>
-                    Minions ipsum gelatooo uuuhhh para tú bappleees para tú tank yuuu! 
-                    Gelatooo po kass. Bappleees poopayee tulaliloo pepete belloo! Wiiiii. 
-                    Baboiii hana dul sae bappleees pepete hana dul sae po kass po kass baboiii. 
-                    Belloo! hahaha baboiii poopayee hahaha belloo! La bodaaa bee do bee do bee do chasy. 
-                    Pepete poopayee tank yuuu! Butt la bodaaa wiiiii aaaaaah ti aamoo! Poulet tikka masala. 
-                    Tatata bala tu daa ti aamoo! Poulet tikka masala poopayee wiiiii bappleees 
-                    hana dul sae ti aamoo! Jeje belloo!
-                    </p>
+                    <h2 class="service__title title">We are best in:</h2>
+                </div>
+            </div>
+            <div class="service__row row">
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-daycare.png">
+                    </div>
+                     <p class="card__service__text">Daycare</p>
+                </div>
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-walking.png">
+                    </div>
+                    <p class="card__service__text">Dog walking</p>
+                </div>
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-grooming.png">
+                    </div>
+                    <p class="card__service__text">Grooming</p>
+                </div>
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-adoption.png">
+                    </div>
+                    <p class="card__service__text">Adoption</p>
+                </div>
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-training.png">
+                    </div>
+                    <p class="card__service__text">Training</p>
+                </div>
+                <div class="service__col card col-md-2">
+                    <div class="card__service">
+                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-vet.png">
+                    </div>
+                    <p class="card__service__text">Vet</p>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="contract">
         <div class="contract__container container">
             <div class="contract__row row">
