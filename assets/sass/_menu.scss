@@ -1,0 +1,32 @@
+.menu {
+
+    max-width: 530px;
+    margin: 0 auto;
+    margin-right: 0;
+
+    &__item {
+        position: relative;
+        display: inline-block;
+        min-width: 120px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+            &:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 0);
+                bottom: 0;
+                width: 50px;
+                height: 1px;
+                transition: .3s;
+                background: #000;
+            }
+        }
+    }
+}

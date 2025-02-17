@@ -1,0 +1,14 @@
+{
+  "name": "petcom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass assets/sass/style.scss assets/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.85.0"
+  }
+}
