@@ -42,10 +42,27 @@ input, select, textarea {
   margin-bottom: 70px;
 }
 
-.header {
-  padding: 40px 0 0 0;
+.text {
+  text-align: left;
+  text-transform: none;
+  font-weight: normal;
+  font-family: "FunnelSans-Light";
+  font-size: 16px;
+  line-height: 1.5;
 }
-.header__logo {
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+.header__container__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__container__row__logo {
   font-size: 35px;
   font-weight: bold;
   line-height: 1.5;
@@ -61,7 +78,7 @@ input, select, textarea {
   display: inline-block;
   min-width: 100px;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1.5;
   transition: 0.3s;
@@ -80,9 +97,23 @@ input, select, textarea {
 }
 
 .banner {
-  padding: 60px 0 60px 0;
+  position: relative;
+  padding: 60px 0 0 0;
 }
-.banner__text {
+.banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/banner.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+.banner__container__row__col__text {
   display: block;
   max-width: 550px;
   text-align: center;
@@ -90,50 +121,64 @@ input, select, textarea {
   font-size: 70px;
   font-family: "funnelSans-bold";
   line-height: 1;
+  margin-bottom: 60px;
 }
-
-.pet .card {
-  border: none;
-}
-.pet .card__pet {
+.banner__container__row__col__card {
   width: 300px;
+  border: none;
   box-sizing: border-box;
   overflow: hidden;
+  background: none;
 }
-.pet .card__pet--green {
+.banner__container__row__col__card--green {
   margin: 0 auto;
   margin-left: 0;
   border-radius: 0 50% 50% 0;
   background: #02C37F;
 }
-.pet .card__pet--yellow {
+.banner__container__row__col__card--yellow {
   margin: 0 auto;
   border-radius: 50%;
   background: #E8BA4F;
 }
-.pet .card__pet--orange {
+.banner__container__row__col__card--orange {
   margin: 0 auto;
   margin-right: 0;
   border-radius: 50% 50% 0 0;
   background: #E06B2C;
 }
-.pet .card__pet__image {
+.banner__container__row__col__card__image {
   position: relative;
   bottom: -60px;
 }
-.pet .card__pet__image--contain {
+.banner__container__row__col__card__image--contain {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+.about {
+  padding: 70px 0 35px 0;
+}
+.about__container__row__col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about__container__row__col__image--contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.about__container__row__col__text {
+  text-align: center;
+}
+
 .service {
-  padding: 60px 0;
+  padding: 70px 0 35px 0;
 }
-.service .card {
-  border: none;
-}
-.service .card__service {
+.service__container__row__col__card {
   position: relative;
   width: 100px;
   height: 100px;
@@ -143,10 +188,10 @@ input, select, textarea {
   border-radius: 30%;
   background: #E6EFFF;
 }
-.service .card__service:hover {
+.service__container__row__col__card:hover {
   background: #FFD101;
 }
-.service .card__service:hover:after {
+.service__container__row__col__card:hover:after {
   content: "";
   position: absolute;
   top: -25px;
@@ -157,12 +202,12 @@ input, select, textarea {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.service .card__service__image--contain {
+.service__container__row__col__card__image--contain {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.service .card__service__text {
+.service__container__row__col__text {
   text-align: center;
   font-size: 16px;
   font-weight: bold;

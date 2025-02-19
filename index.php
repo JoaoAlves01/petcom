@@ -14,12 +14,12 @@
 <body>
     <header class="header">
         <div class="header__container container">
-            <div class="header__row row">
-                <div class="header__logo col-md-4">
+            <div class="header__container__row row">
+                <div class="header__container__row__logo col-md-4">
                     Petcom
                 </div>
-                <div class="header__menu-col col-md-8">
-                    <ul class="header__menu menu">
+                <div class="header__container__row__col col-md-8">
+                    <ul class="header__container__row__col__menu  menu">
                         <li class="menu__item">Home</li>
                         <li class="menu__item">About</li>
                         <li class="menu__item">Service</li>
@@ -31,29 +31,27 @@
     </header>
     <section class="banner">
         <div class="banner__container container">
-            <div class="banner__row row">
-                <div class="banner__text col-md-12">
+            <div class="banner__container__row row">
+                <div class="banner__container__row__col__text col-md-12">
                     Take a good care of pets
                 </div>
             </div>
         </div>
-    </section>
-    <section class="pet">
-        <div class="pet__container container">
-            <div class="pet__row row">
-                <div class="pet__card card col-md-4">
-                   <div class="card__pet card__pet--green">
-                        <img class="card__pet__image card__pet__image--contain" src="assets/images/pet-1.png" alt="image-pet-card-1">
+        <div class="banner__container container">
+            <div class="banner__container__row row">
+                <div class="banner__container__row__col col-md-4">
+                   <div class="banner__container__row__col__card banner__container__row__col__card--green">
+                        <img class="banner__container__row__col__card__image banner__container__row__col__card__image--contain" src="assets/images/pet-1.png" alt="image-pet-card-1">
                    </div>
                 </div>
-                <div class="pet__card card col-md-4">
-                    <div class="card__pet card__pet--yellow">
-                         <img class="card__pet__image card__pet__image--contain" src="assets/images/pet-2.png" alt="image-pet-card-2">
+                <div class="banner__container__row__col col-md-4">
+                    <div class="banner__container__row__col__card banner__container__row__col__card--yellow">
+                         <img class="banner__container__row__col__card__image banner__container__row__col__card__image--contain" src="assets/images/pet-2.png" alt="image-pet-card-1">
                     </div>
                  </div>
-                 <div class="pet__card card col-md-4">
-                    <div class="card__pet card__pet--orange">
-                         <img class="card__pet__image card__pet__image--contain" src="assets/images/pet-3.png" alt="image-pet-card-3">
+                 <div class="banner__container__row__col col-md-4">
+                    <div class="banner__container__row__col__card banner__container__row__col__card--orange">
+                         <img class="banner__container__row__col__card__image banner__container__row__col__card__image--contain" src="assets/images/pet-3.png" alt="image-pet-card-1">
                     </div>
                  </div>
             </div>
@@ -61,76 +59,78 @@
     </section>
     <section class="about">
         <div class="about__container container">
-            <div class="about__row row">
-                <div class="about__col col-md-6">
-                    <h2>Welcome to the Pet Care Company</h2>
-                    <p>
-                    Minions ipsum gelatooo uuuhhh para tú bappleees para tú tank yuuu! 
-                    Gelatooo po kass. Bappleees poopayee tulaliloo pepete belloo! Wiiiii. 
-                    Baboiii hana dul sae bappleees pepete hana dul sae po kass po kass baboiii. 
-                    Belloo! hahaha baboiii poopayee hahaha belloo! La bodaaa bee do bee do bee do chasy. 
-                    Pepete poopayee tank yuuu! Butt la bodaaa wiiiii aaaaaah ti aamoo! Poulet tikka masala. 
-                    Tatata bala tu daa ti aamoo! Poulet tikka masala poopayee wiiiii bappleees 
-                    hana dul sae ti aamoo! Jeje belloo!
+            <div class="about__container__row row">
+                <div class="about__container__row__col col-md-4">
+                    <img class="about__container__row__col__image about__container__row__col__image--contain" src="assets/images/image-about.png">
+                </div>
+                <div class="about__container__row__col col-md-8">
+                    <h2 class="about__container__row__col__title title">Welcome to the Pet Care Company</h2>
+                    <p class="about__container__row__col__text text">
+                        Minions ipsum gelatooo uuuhhh para tú bappleees para tú tank yuuu! 
+                        Gelatooo po kass. Bappleees poopayee tulaliloo pepete belloo! Wiiiii. 
+                        Baboiii hana dul sae bappleees pepete hana dul sae po kass po kass baboiii. 
+                        Belloo! hahaha baboiii poopayee hahaha belloo! La bodaaa bee do bee do bee do chasy. 
+                        Pepete poopayee tank yuuu! Butt la bodaaa wiiiii aaaaaah ti aamoo! Poulet tikka masala. 
+                        Tatata bala tu daa ti aamoo! Poulet tikka masala poopayee wiiiii bappleees 
+                        hana dul sae ti aamoo! Jeje belloo!
                     </p>
                 </div>
-                <div class="about__col col-md-6"></div>
             </div>
         </div>
     </section>
     <section class="service">
         <div class="service__container container">
-            <div class="service__row row">
-                <div class="service__col col-md-12">
-                    <h2 class="service__title title">We are best in:</h2>
+            <div class="service__container_row row">
+                <div class="service__container_row__col col-md-12">
+                    <h2 class="service__container_row__col__title title">We are best in:</h2>
                 </div>
             </div>
-            <div class="service__row row">
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-daycare.png">
+            <div class="service__container_row row">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-daycare.png">
                     </div>
-                     <p class="card__service__text">Daycare</p>
+                     <p class="service__container__row__col__text">Daycare</p>
                 </div>
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-walking.png">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-walking.png">
                     </div>
-                    <p class="card__service__text">Dog walking</p>
+                    <p class="service__container__row__col__text">Dog walking</p>
                 </div>
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-grooming.png">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-grooming.png">
                     </div>
-                    <p class="card__service__text">Grooming</p>
+                    <p class="service__container__row__col__text">Grooming</p>
                 </div>
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-adoption.png">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-adoption.png">
                     </div>
-                    <p class="card__service__text">Adoption</p>
+                    <p class="service__container__row__col__text">Adoption</p>
                 </div>
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-training.png">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-training.png">
                     </div>
-                    <p class="card__service__text">Training</p>
+                    <p class="service__container__row__col__text">Training</p>
                 </div>
-                <div class="service__col card col-md-2">
-                    <div class="card__service">
-                        <img class="card__service__image card__service__image--contain" src="assets/images/icon-vet.png">
+                <div class="service__container_row__col col-md-2">
+                    <div class="service__container__row__col__card">
+                        <img class="service__container__row__col__card__image service__container__row__col__card__image--contain" src="assets/images/icon-vet.png">
                     </div>
-                    <p class="card__service__text">Vet</p>
+                    <p class="service__container__row__col__text">Vet</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="contract">
         <div class="contract__container container">
-            <div class="contract__row row">
-                <div class="contract__col col-md-12">
-                    <h2>Book an appoiment</h2>
-                    <p>
+            <div class="contract__container__row row">
+                <div class="contract__container__row__col col-md-12">
+                    <h2 class="contract__container__row__col__title title">Book an appoiment</h2>
+                    <p class="contract__container__row__col__text text">
                     Minions ipsum gelatooo uuuhhh para tú bappleees para tú tank yuuu! 
                     Gelatooo po kass. Bappleees poopayee tulaliloo pepete belloo! Wiiiii. 
                     Baboiii hana dul sae bappleees pepete hana dul sae po kass po kass baboiii. 

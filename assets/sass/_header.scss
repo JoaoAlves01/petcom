@@ -1,10 +1,21 @@
 .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
 
-    padding: 40px 0 0 0;
-    
-    &__logo {
-        font-size: 35px;
-        font-weight: bold;
-        line-height: 1.5;
+    &__container {
+
+        &__row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__logo {
+                font-size: 35px;
+                font-weight: bold;
+                line-height: 1.5;
+            }
+        }
     }
 }
