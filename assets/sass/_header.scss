@@ -12,9 +12,13 @@
             align-items: center;
 
             &__logo {
-                font-size: 35px;
-                font-weight: bold;
-                line-height: 1.5;
+                
+                &__link {
+                    font-size: 35px;
+                    font-weight: bold;
+                    font-family: "FunnelSans-Bold";
+                    line-height: 1.5;
+                }
             }
         }
     }

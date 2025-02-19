@@ -16,7 +16,7 @@
         <div class="header__container container">
             <div class="header__container__row row">
                 <div class="header__container__row__logo col-md-4">
-                    Petcom
+                    <a class="header__container__row__logo__link" href="/">Petcom</a>
                 </div>
                 <div class="header__container__row__col col-md-8">
                     <ul class="header__container__row__col__menu  menu">
@@ -144,6 +144,10 @@
         </div>
     </section>
 
-    <footer></footer>
+    <footer class="footer">
+        <p class="footer__text text">
+            © Pet Care Company. Todos os direitos reservados.
+        </p>
+    </footer>
 </body>
 </html>
