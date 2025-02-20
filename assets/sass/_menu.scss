@@ -5,27 +5,31 @@
     margin-right: 0;
 
     &__item {
-        position: relative;
         display: inline-block;
         min-width: 100px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 1.5;
-        transition: .3s;
-        cursor: pointer;
 
-        &:hover {
-            &:after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, 0);
-                bottom: 0;
-                width: 50px;
-                height: 1px;
-                transition: .3s;
-                background: #000;
+        &__link {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "FunnelSans-Bold";
+            line-height: 1.5;
+            transition: .3s;
+            cursor: pointer;
+
+            &:hover {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    bottom: 0;
+                    width: 50px;
+                    height: 1px;
+                    transition: .3s;
+                    background: #000;
+                }
             }
         }
     }

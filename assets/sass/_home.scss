@@ -106,7 +106,20 @@
 }
 
 .service {
+    position: relative;
     padding: 70px 0 35px 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url(../images/before.png);
+        opacity: .1;
+        z-index: -1;
+    }
 
     &__container {
 
@@ -160,5 +173,22 @@
                 }
             }
         }
+    }
+}
+
+.contract {
+    position: relative;
+    padding: 70px 0 35px 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url(../images/before.png);
+        opacity: .1;
+        z-index: -1;
     }
 }

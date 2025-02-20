@@ -52,3 +52,40 @@ input, select, textarea{
     font-size: 16px;
     line-height: 1.5;
 }
+
+.box__field {
+    position: relative;
+    box-sizing: border-box;
+
+    &__label {
+        position: absolute;
+        top: 10px;
+        left: 25px;
+        display: block;
+        font-size: 14px;
+        pointer-events: none;
+        line-height: 1.5;
+        font-weight: 300;
+        color: #000;
+        z-index: 1;
+    }
+
+    &--float {
+
+        .box__field__label {
+            position: absolute;
+            top: -9px;
+            left: 20px;
+            display: block;
+            font-size: 12px;
+            pointer-events: none;
+            line-height: 1.5;
+            font-weight: 300;
+            padding: 0 5px;
+            transition: .3s;
+            color: #000;
+            background: #ffff;
+            z-index: 1;
+        }
+    }
+}

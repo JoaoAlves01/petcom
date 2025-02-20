@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/app.js"></script>
 </head>
 <body>
     <header class="header">
@@ -20,16 +23,24 @@
                 </div>
                 <div class="header__container__row__col col-md-8">
                     <ul class="header__container__row__col__menu  menu">
-                        <li class="menu__item">Home</li>
-                        <li class="menu__item">About</li>
-                        <li class="menu__item">Service</li>
-                        <li class="menu__item">Contract</li>
+                        <li class="menu__item">
+                            <a class="menu__item__link" href="/">Home</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item__link" href="#about">About</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item__link" href="#service">Service</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item__link" href="#contract">Contract</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
-    <section class="banner">
+    <section id="home" class="banner">
         <div class="banner__container container">
             <div class="banner__container__row row">
                 <div class="banner__container__row__col__text col-md-12">
@@ -57,7 +68,7 @@
             </div>
         </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
         <div class="about__container container">
             <div class="about__container__row row">
                 <div class="about__container__row__col col-md-4">
@@ -78,7 +89,7 @@
             </div>
         </div>
     </section>
-    <section class="service">
+    <section id="service" class="service">
         <div class="service__container container">
             <div class="service__container_row row">
                 <div class="service__container_row__col col-md-12">
@@ -125,25 +136,32 @@
             </div>
         </div>
     </section>
-    <section class="contract">
+    <section id="contract" class="contract">
         <div class="contract__container container">
             <div class="contract__container__row row">
                 <div class="contract__container__row__col col-md-12">
                     <h2 class="contract__container__row__col__title title">Book an appoiment</h2>
-                    <p class="contract__container__row__col__text text">
-                    Minions ipsum gelatooo uuuhhh para tú bappleees para tú tank yuuu! 
-                    Gelatooo po kass. Bappleees poopayee tulaliloo pepete belloo! Wiiiii. 
-                    Baboiii hana dul sae bappleees pepete hana dul sae po kass po kass baboiii. 
-                    Belloo! hahaha baboiii poopayee hahaha belloo! La bodaaa bee do bee do bee do chasy. 
-                    Pepete poopayee tank yuuu! Butt la bodaaa wiiiii aaaaaah ti aamoo! Poulet tikka masala. 
-                    Tatata bala tu daa ti aamoo! Poulet tikka masala poopayee wiiiii bappleees 
-                    hana dul sae ti aamoo! Jeje belloo!
-                    </p>
+                    <form class="row g-3">
+                        <div class="col-md-12 box__field">
+                            <label class="box__field__label form-label">Name</label>
+                            <input type="text" class="box__field__input form-control">
+                        </div>
+                        <div class="col-md-6 box__field">
+                            <label class="box__field__label form-label">Date</label>
+                            <input type="text" class="box__field__input form-control">
+                        </div>
+                        <div class="col-md-6 box__field">
+                            <label class="box__field__label form-label">Time</label>
+                            <input type="text" class="box__field__input form-control">
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary me-md-2">Schedule</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <p class="footer__text text">
             © Pet Care Company. Todos os direitos reservados.
