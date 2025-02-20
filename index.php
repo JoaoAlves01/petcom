@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style-min.css">
 
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/jquery/jquery.js"></script>
+  <script src="assets/js/app-min.js"></script>
 </head>
 <body>
     <header class="header">
