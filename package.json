@@ -8,7 +8,8 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
+  "devDependencies": {
+    "gulp": "^5.0.0",
     "sass": "^1.85.0"
   }
 }
