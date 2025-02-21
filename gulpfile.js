@@ -1,83 +1,28 @@
 const gulp = require('gulp');
-const fs = require('fs');
-const path = require('path');
+const cleanCSS = require('gulp-clean-css');
+const gulpDebug = require('gulp-debug').default;
 
-// Minify CSS
-function minifyCss(content) {
-    return content.replace(/\s+/g, ' ')
-    .replace(/\/\*.*?\*\//g, '');
-}
+gulp.task('minify-css', function() {
 
-// Minify JS
-function minifyJs(content) {
-    return content.replace(/\s+/g, ' ')
-        .replace(/\/\*.*?\*\//g, '')
-        .replace(/\/\/.*(?=\n)/g, '');
-}
-
-
-
-gulp.task('minify-css', function(done) {
-
-    const sourcePath = path.join(__dirname, 'assets/css');
-    const destPath = path.join(__dirname, 'assets/css');
-
-    fs.readdir(sourcePath, (err, files) => {
-        if (err) throw err;
-
-        files.forEach(file => {
-            const filePath = path.join(sourcePath, file);
-            const fileExt = path.extname(file);
-            const fileName = path.basename(file, fileExt);
-
-            if (fileExt === '.css') {
-                fs.readFile(filePath, 'utf8', (err, data) => {
-                    if (err) throw err;
-
-                    const minifiedContent = minifyCss(data);
-                    const destFilePath = path.join(destPath, `${fileName}-min${fileExt}`);
-                    
-                    fs.writeFile(destFilePath, minifiedContent, (err) => {
-                        if (err) throw err;
-                    });
-                });
-            }
-        });
-
-        done();
-    });
+    return gulp.src('./assets/css/style.css')
+        .pipe(cleanCSS({
+            debug: true,
+            level: {
+                1: { all: true },
+                2: { all: true }
+            },
+            rebase: true,
+            rebaseTo: 'dist',
+            compatibility: 'ie8, > 0.5%, last 2 versions'
+        }, (details) => {
+            console.log(`
+                Archive: ${details.name}
+                Original size: ${details.stats.originalSize}
+                Minified size: ${details.stats.minifiedSize}
+                Efficiency: ${details.stats.efficiency * 100}%
+            `);
+        }))
+        .pipe(gulp.dest('./assets/dist/'));
 });
 
-gulp.task('minify-js', function(done) {
-
-    const sourcePath = path.join(__dirname, 'assets/js');
-    const destPath = path.join(__dirname, 'assets/js');
-
-    fs.readdir(sourcePath, (err, files) => {
-        if (err) throw err;
-
-        files.forEach(file => {
-            const filePath = path.join(sourcePath, file);
-            const fileExt = path.extname(file);
-            const fileName = path.basename(file, fileExt);
-
-            if (fileExt === '.js') {
-                fs.readFile(filePath, 'utf8', (err, data) => {
-                    if (err) throw err;
-
-                    const minifiedContent = minifyJs(data);
-                    const destFilePath = path.join(destPath, `${fileName}-min${fileExt}`);
-
-                    fs.writeFile(destFilePath, minifiedContent, (err) => {
-                        if (err) throw err;
-                    });
-                });
-            }
-        });
-
-        done();
-    });
-});
-
-
-gulp.task('default', gulp.series('minify-css', 'minify-js'));
+gulp.task('default', gulp.series('minify-css'));
