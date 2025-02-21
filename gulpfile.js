@@ -1,11 +1,12 @@
 const gulp = require('gulp');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const debug = require('gulp-debug').default;
 const log = require('fancy-log');
-const mime = require('mime');
-const colors = require('ansi-colors');
 const through = require('through2');
+const sass = require('gulp-sass')(require('sass'));
 
 function captureOriginalSize() {
 
@@ -44,14 +45,18 @@ gulp.task('minify-css', function() {
 
     return gulp.src('./assets/css/style.css')
         .pipe(captureOriginalSize())
+        .pipe(postcss([
+            autoprefixer({
+                cascade: false,
+                grid: true
+            })
+        ]))
         .pipe(cleanCSS({
             level: {
                 1: { all: true },
                 2: { all: true }
             },
-            rebase: true,
-            rebaseTo: 'dist',
-            compatibility: 'ie8, > 0.5%, last 2 versions'
+            rebase: true
         }))
         .pipe(logFileSize())
         .pipe(gulp.dest('./assets/dist/'));
@@ -61,9 +66,24 @@ gulp.task('minify-js', function() {
 
     return gulp.src('./assets/js/app.js')
         .pipe(captureOriginalSize())
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
         .pipe(uglify())
         .pipe(logFileSize())
         .pipe(gulp.dest('./assets/dist/'));
 });
 
+gulp.task('compile-sass', function() {
+
+    return gulp.src('./assets/sass/style.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./assets/dist/'));
+});
+
 gulp.task('default', gulp.series('minify-css', 'minify-js'));
+
+gulp.task('watch', function() {
+    gulp.watch('./assets/sass/**/*.scss', gulp.series('compile-sass'));
+});
