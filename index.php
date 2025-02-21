@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/dist/style.css">
 
   <script src="assets/js/jquery/jquery.js"></script>
-  <script src="assets/js/app-min.js"></script>
+  <script src="assets/dist/app.js"></script>
 </head>
 <body>
     <header class="header">
