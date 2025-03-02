@@ -1,12 +1,15 @@
-const gulp = require('gulp');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cleanCSS = require('gulp-clean-css');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const log = require('fancy-log');
-const through = require('through2');
-const sass = require('gulp-sass')(require('sass'));
+import gulp from 'gulp';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cleanCSS from 'gulp-clean-css';
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
+import log from 'fancy-log';
+import through from 'through2';
+import gulpSass from 'gulp-sass';
+import * as sass from 'sass';
+import imagemin from 'gulp-imagemin';
+
 
 function captureOriginalSize() {
 
@@ -74,15 +77,25 @@ gulp.task('minify-js', function() {
         .pipe(gulp.dest('./assets/dist/'));
 });
 
+const sassProcessor = gulpSass(sass);
 gulp.task('compile-sass', function() {
 
     return gulp.src('./assets/sass/style.scss')
-        .pipe(sass())
-        .on('error', sass.logError)
+        .pipe(sassProcessor())
+        .on('error', sassProcessor.logError)
         .pipe(gulp.dest('./assets/dist/'));
 });
 
-gulp.task('default', gulp.series('minify-css', 'minify-js'));
+gulp.task('compile-image', function() {
+
+    return gulp.src('./assets/images/*')
+        .pipe(captureOriginalSize())
+        .pipe(imagemin())
+        .pipe(logFileSize())
+        .pipe(gulp.dest('./assets/dist/images'));
+});
+
+gulp.task('default', gulp.series('compile-image'));
 
 gulp.task('watch', function() {
     gulp.watch('./assets/sass/**/*.scss', gulp.series('compile-sass'));
