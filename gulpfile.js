@@ -9,35 +9,26 @@ import through from 'through2';
 import gulpSass from 'gulp-sass';
 import * as sass from 'sass';
 import imagemin from 'gulp-imagemin';
-
+import replace from 'gulp-replace';
 
 function captureOriginalSize() {
-
     return through.obj(function(file, enc, cb) {
-        
         if (file.isBuffer()) {
             file.originalSize = Buffer.byteLength(file.contents);
         }
-
         cb(null, file);
     });
 }
 
 function logFileSize() {
- 
     return through.obj(function(file, enc, cb) {
-
         if (file.isBuffer()) {
-
-            file.contents = Buffer.from(file.contents.toString());
-
             const minifiedSize = Buffer.byteLength(file.contents);
-            
             log(`
-                Archive: ${file.relative}
-                Original size: ${file.originalSize} bytes
-                Minified size: ${minifiedSize} bytes
-                Efficiency: ${((1 - minifiedSize / file.originalSize) * 100).toFixed(2)}%
+                Arquivo: ${file.relative}
+                Tamanho original: ${file.originalSize} bytes
+                Tamanho otimizado: ${minifiedSize} bytes
+                Eficiência: ${((1 - minifiedSize / file.originalSize) * 100).toFixed(2)}%
             `);
         }
         cb(null, file);
@@ -46,7 +37,7 @@ function logFileSize() {
 
 gulp.task('minify-css', function() {
 
-    return gulp.src('./assets/css/style.css')
+    return gulp.src('./assets/dist/style.css')
         .pipe(captureOriginalSize())
         .pipe(postcss([
             autoprefixer({
@@ -62,7 +53,7 @@ gulp.task('minify-css', function() {
             rebase: true
         }))
         .pipe(logFileSize())
-        .pipe(gulp.dest('./assets/dist/'));
+        .pipe(gulp.dest('./assets/dist'));
 });
 
 gulp.task('minify-js', function() {
@@ -88,14 +79,23 @@ gulp.task('compile-sass', function() {
 
 gulp.task('compile-image', function() {
 
-    return gulp.src('./assets/images/*')
+    return gulp.src('./assets/images/**/*')
         .pipe(captureOriginalSize())
         .pipe(imagemin())
         .pipe(logFileSize())
         .pipe(gulp.dest('./assets/dist/images'));
 });
 
-gulp.task('default', gulp.series('compile-image'));
+gulp.task('update-html-paths', function() {
+
+    return gulp.src('./**/*.php')
+        .pipe(replace('assets/images/', 'assets/dist/images/'))
+        .pipe(gulp.dest(function(file) {
+            return file.base;
+        }));
+});
+
+gulp.task('default', gulp.series('minify-css', 'minify-js', 'compile-image', 'update-html-paths'));
 
 gulp.task('watch', function() {
     gulp.watch('./assets/sass/**/*.scss', gulp.series('compile-sass'));
