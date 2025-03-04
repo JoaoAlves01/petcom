@@ -72,3 +72,16 @@ We adopted the BEM methodology to ensure organized and scalable CSS structure. T
 1. Clone this repository:  
    ```bash
    git clone https://github.com/JoaoAlves01/petcom
+2. Install dependencies: 
+   ```bash
+   npm install
+3. Run Gulp to start the local server and watch for file changes:
+   ```bash
+   gulp
+---
+
+## 🌟 Conclusion
+
+This project is not just a beautiful and functional landing page but also a laboratory for exploring best practices and automation tools with Gulp. The combination of Sass, minification, and the BEM CSS structure results in an efficient and well-organized site.
+
+Feel free to contribute or explore the code! 😊
